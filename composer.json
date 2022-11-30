@@ -1,0 +1,18 @@
+{
+    "name": "dedegunawan/bni-ecollection",
+    "description": "PHP wrapper untuk api bni ecollection",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dedegunawan\\BniEcollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dede Gunawan",
+            "email": "gunawan@dede.web.id"
+        }
+    ],
+    "require": {}
+}
