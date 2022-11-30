@@ -1,0 +1,133 @@
+<?php
+
+namespace DedeGunawan\BniEcollection;
+
+class ResponseCode
+{
+	const SUCCESS = '000';
+	const INCOMPLETE = '001';
+	const IP_ADDRESS_CLIENT_ID = '002';
+	const SERVICE_NOT_FOUND = '004';
+	const SERVICE_NOT_DEFINED = '005';
+	const INVALID_VA_NUMBER = '006';
+	const INVALID_BILLING_NUMBER = '007';
+	const TECHNICAL_FAILURE = '008';
+	const UNEXPECTED_ERROR = '009';
+	const REQUEST_TIMEOUT = '010';
+	const BILLING_TYPE_NOT_MATCH = '011';
+	const EXPIRED_DATE = '012';
+	const DECIMAL_FRACTION = '013';
+	const VA_NUMBER_SHOULD_NOT_DEFINED = '014';
+	const INVALID_PERMISSION = '015';
+	const INVALID_BILLING_TYPE = '016';
+	const CUSTOMER_NAME_CANNOT_BE_USED = '017';
+	const BILLING_PAID = '100';
+	const BILLING_NOT_FOUND = '101';
+	const VA_NUMBER_IN_USE = '102';
+	const BILLING_NUMBER_IN_EXPIRED = '103';
+	const BILLING_NUMBER_IN_USE = '104';
+	const DUPLICATE_BILLING_ID = '105';
+	const AMOUNT_CANNOT_BE_CHANGED = '107';
+	const DATA_NOT_FOUND = '108';
+	const EXCEED_DAILY_LIMIT = '110';
+	const FAILED_SEND_SMS = '200';
+	const SMS_ONLY_FIX_PAYMENT = '201';
+	const BILLING_TYPE_NOT_SUPPORTED = '801';
+	const SYSTEM_OFFLINE = '997';
+	const TOO_MANY_INQUIRY = '996';
+	const CONTENT_TYPE_NOT_DEFINED = '998';
+	const INTERNAL_ERROR = '999';
+
+	const VALID_CODE = [
+		self::SUCCESS,
+		self::INCOMPLETE,
+		self::IP_ADDRESS_CLIENT_ID,
+		self::SERVICE_NOT_FOUND,
+		self::SERVICE_NOT_DEFINED,
+		self::INVALID_VA_NUMBER,
+		self::INVALID_BILLING_NUMBER,
+		self::TECHNICAL_FAILURE,
+		self::UNEXPECTED_ERROR,
+		self::REQUEST_TIMEOUT,
+		self::BILLING_TYPE_NOT_MATCH,
+		self::EXPIRED_DATE,
+		self::DECIMAL_FRACTION,
+		self::VA_NUMBER_SHOULD_NOT_DEFINED,
+		self::INVALID_PERMISSION,
+		self::INVALID_BILLING_TYPE,
+		self::CUSTOMER_NAME_CANNOT_BE_USED,
+		self::BILLING_PAID,
+		self::BILLING_NOT_FOUND,
+		self::VA_NUMBER_IN_USE,
+		self::BILLING_NUMBER_IN_EXPIRED,
+		self::BILLING_NUMBER_IN_USE,
+		self::DUPLICATE_BILLING_ID,
+		self::AMOUNT_CANNOT_BE_CHANGED,
+		self::DATA_NOT_FOUND,
+		self::EXCEED_DAILY_LIMIT,
+		self::FAILED_SEND_SMS,
+		self::SMS_ONLY_FIX_PAYMENT,
+		self::BILLING_TYPE_NOT_SUPPORTED,
+		self::SYSTEM_OFFLINE,
+		self::TOO_MANY_INQUIRY,
+		self::CONTENT_TYPE_NOT_DEFINED,
+		self::INTERNAL_ERROR,
+	];
+
+	const SUCCESS_CODE = [
+		self::SUCCESS
+	];
+
+	const ERROR_CODE = [
+		self::INCOMPLETE,
+		self::IP_ADDRESS_CLIENT_ID,
+		self::SERVICE_NOT_FOUND,
+		self::SERVICE_NOT_DEFINED,
+		self::INVALID_VA_NUMBER,
+		self::INVALID_BILLING_NUMBER,
+		self::TECHNICAL_FAILURE,
+		self::UNEXPECTED_ERROR,
+		self::REQUEST_TIMEOUT,
+		self::BILLING_TYPE_NOT_MATCH,
+		self::EXPIRED_DATE,
+		self::DECIMAL_FRACTION,
+		self::VA_NUMBER_SHOULD_NOT_DEFINED,
+		self::INVALID_PERMISSION,
+		self::INVALID_BILLING_TYPE,
+		self::CUSTOMER_NAME_CANNOT_BE_USED,
+		self::BILLING_PAID,
+		self::BILLING_NOT_FOUND,
+		self::VA_NUMBER_IN_USE,
+		self::BILLING_NUMBER_IN_EXPIRED,
+		self::BILLING_NUMBER_IN_USE,
+		self::DUPLICATE_BILLING_ID,
+		self::AMOUNT_CANNOT_BE_CHANGED,
+		self::DATA_NOT_FOUND,
+		self::EXCEED_DAILY_LIMIT,
+		self::FAILED_SEND_SMS,
+		self::SMS_ONLY_FIX_PAYMENT,
+		self::BILLING_TYPE_NOT_SUPPORTED,
+		self::SYSTEM_OFFLINE,
+		self::TOO_MANY_INQUIRY,
+		self::CONTENT_TYPE_NOT_DEFINED,
+		self::INTERNAL_ERROR,
+	];
+
+	const DEFAULT_RESPONSE_ERROR_CODE = self::INTERNAL_ERROR;
+
+	/**
+	 * @param $code
+	 * @return bool
+	 */
+	public static function isSuccessCode($code) {
+		return in_array($code, self::SUCCESS_CODE);
+	}
+
+	/**
+	 * @param $code
+	 * @return bool
+	 */
+	public static function isErrorCode($code) {
+		return in_array($code, self::ERROR_CODE);
+	}
+}

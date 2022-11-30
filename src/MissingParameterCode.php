@@ -1,0 +1,25 @@
+<?php
+
+namespace DedeGunawan\BniEcollection;
+
+class MissingParameterCode
+{
+	const DEFAULT_MISSING_CODE = 0;
+	const TRANSACTION_TYPE_MISSING_CODE = '001';
+	const CLIENT_ID_MISSING_CODE = '002';
+	const TRX_ID_MISSING_CODE = '101';
+	const TRX_AMOUNT_MISSING_CODE = '102';
+	const BILLING_TYPE_MISSING_CODE = '103';
+	const CUSTOMER_NAME_MISSING_CODE = '104';
+
+	const VALID_CODE = [
+		self::DEFAULT_MISSING_CODE,
+		self::TRANSACTION_TYPE_MISSING_CODE,
+		self::CLIENT_ID_MISSING_CODE,
+		self::TRX_ID_MISSING_CODE,
+		self::TRX_AMOUNT_MISSING_CODE,
+		self::BILLING_TYPE_MISSING_CODE,
+		self::CUSTOMER_NAME_MISSING_CODE,
+	];
+
+}
