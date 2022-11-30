@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dedegunawan\\BniEcollection\\": "src/"
+            "DedeGunawan\\BniEcollection\\": "src/"
         }
     },
     "authors": [
