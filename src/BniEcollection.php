@@ -209,9 +209,20 @@ class BniEcollection
 			])
 		);
 		return $response;
-
 	}
 
+	public function callback($client_id, $hashed_datas)
+	{
+		$app_client_id = self::getClientId();
+		if ($app_client_id != $client_id) ResponseErrorException::newException(
+			ResponseCode::UNEXPECTED_ERROR
+		);
 
+		$datas = $this->decrypt($hashed_datas);
+		if (!$datas) ResponseErrorException::newException(
+			ResponseCode::UNEXPECTED_ERROR
+		);
+		return $datas;
+	}
 
 }

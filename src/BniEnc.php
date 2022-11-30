@@ -4,7 +4,7 @@ namespace DedeGunawan\BniEcollection;
 class BniEnc
 {
 
-	const TIME_DIFF_LIMIT = 480;
+	const TIME_DIFF_LIMIT = 480000;
 
 	public static function encrypt(array $json_data, $cid, $secret) {
 		return self::doubleEncrypt(strrev(time()) . '.' . json_encode($json_data), $cid, $secret);
@@ -45,6 +45,7 @@ class BniEnc
 
 	private static function doubleDecrypt($string, $cid, $secret) {
 		$result = base64_decode(strtr(str_pad($string, ceil(strlen($string) / 4) * 4, '=', STR_PAD_RIGHT), '-_', '+/'));
+
 		$result = self::dec($result, $cid);
 		$result = self::dec($result, $secret);
 		return $result;
